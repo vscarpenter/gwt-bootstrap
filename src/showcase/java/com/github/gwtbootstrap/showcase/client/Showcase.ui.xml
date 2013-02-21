@@ -19,7 +19,7 @@
 		</b:ResponsiveNavbar>
 
 		<b:FluidContainer ui:field="container">
-            <b:Heading size="1">GWT-Bootsrap site for 2.1.1.0-SNAPSHOT</b:Heading>
+            <b:Heading size="1">GWT-Bootsrap site for 2.2.1.0-SNAPSHOT</b:Heading>
 			<b:Hero>
 				<g:VerticalPanel styleName="pull-right">
 					<g:HTMLPanel>
@@ -143,6 +143,10 @@
 				</b:Paragraph>
 				<b:Paragraph>
 					Datepicker component from <a href="http://www.eyecon.ro/bootstrap-datepicker/">Datepicker for Bootstrap</a>,
+					licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>.
+				</b:Paragraph>
+				<b:Paragraph>
+					Datetimepicker component from <a href="http://www.malot.fr/bootstrap-datetimepicker/">DateTime Picker for Bootstrap</a>,
 					licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>.
 				</b:Paragraph>
 				<b:Paragraph>
