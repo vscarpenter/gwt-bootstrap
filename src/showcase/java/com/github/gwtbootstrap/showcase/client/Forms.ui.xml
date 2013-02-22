@@ -369,9 +369,46 @@
 			</b:Column>
 			
 		</b:FluidRow>
-                <b:Heading size="2">
-                    Prepend and append inputs
-                </b:Heading>
+
+        <b:FluidRow>
+            <b:Column size="12">
+            <b:Heading size="4">Html5 Forms</b:Heading>
+            	<b:WellForm type="HORIZONTAL" novalidate="false" autocomplete="false" action="" method="get">
+					<b:ControlGroup>
+						<b:ControlLabel>Required field</b:ControlLabel>
+						<b:Controls>
+							<b:TextBox placeholder="this is a required input" required="true" />
+						</b:Controls>
+					</b:ControlGroup>            		
+					<b:ControlGroup>
+						<b:ControlLabel>Email</b:ControlLabel>
+						<b:Controls>
+							<b:TextBox type="EMAIL" placeholder="user@example.org" required="true" multiple="true"/>
+						</b:Controls>
+					</b:ControlGroup>            		
+					<b:ControlGroup>
+						<b:ControlLabel>Number field</b:ControlLabel>
+						<b:Controls>
+							<b:TextBox type="NUMBER" placeholder="choose a number" min="1" max="21" step="3" />
+						</b:Controls>
+					</b:ControlGroup>
+					<b:ControlGroup>
+						<b:ControlLabel>Pattern</b:ControlLabel>
+						<b:Controls>
+							<b:TextBox placeholder="must match [A-Z]*" pattern="[A-Z]*" />
+						</b:Controls>
+					</b:ControlGroup>
+					<b:FormActions>
+						<b:SubmitButton autofocus="true" formenctype="utf-8">Submit</b:SubmitButton>
+						<b:SubmitButton formaction="#" formtarget="_blank" formmethod="POST" formnovalidate="true" >Submit No Validation</b:SubmitButton>
+					</b:FormActions>      		
+            	</b:WellForm>
+            </b:Column>
+		</b:FluidRow>
+		
+        <b:Heading size="2">
+            Prepend and append inputs
+        </b:Heading>
         <b:FluidRow>
             <b:Column size="4">
                 <b:Paragraph>

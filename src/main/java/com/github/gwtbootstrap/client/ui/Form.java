@@ -15,6 +15,10 @@
  */
 package com.github.gwtbootstrap.client.ui;
 
+import static com.github.gwtbootstrap.client.ui.constants.FormAttributeType.AUTOCOMPLETE;
+import static com.github.gwtbootstrap.client.ui.constants.FormAttributeType.NOVALIDATE;
+
+import com.github.gwtbootstrap.client.ui.base.AttributeHelper;
 import com.github.gwtbootstrap.client.ui.base.ComplexWidget;
 import com.github.gwtbootstrap.client.ui.base.StyleHelper;
 import com.github.gwtbootstrap.client.ui.constants.FormType;
@@ -484,4 +488,20 @@ public class Form extends ComplexWidget implements FormPanelImplHost {
 		onFrameLoadImpl();		
 	}
 
+	// -- Html5 attributes --
+	public void setNovalidate(boolean novalidate) {
+		AttributeHelper.setAttribute(getElement(), NOVALIDATE.getValue(), novalidate);
+	}
+
+	public void setAutocomplete(boolean autocomplete) {
+		AttributeHelper.setAttribute(getElement(), AUTOCOMPLETE.getValue(), autocomplete);
+	}
+	
+	public boolean isNovalidate() {
+		return AttributeHelper.getAttributeAsBoolean(getElement(), NOVALIDATE.getValue());
+	}
+
+	public boolean isAutocomplete() {
+		return AttributeHelper.getAttributeAsBoolean(getElement(), AUTOCOMPLETE.getValue());
+	}
 }

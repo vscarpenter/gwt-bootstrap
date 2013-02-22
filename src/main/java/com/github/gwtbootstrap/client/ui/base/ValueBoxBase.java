@@ -15,12 +15,31 @@
  */
 package com.github.gwtbootstrap.client.ui.base;
 
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.AUTOCOMPLETE;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.AUTOFOCUS;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.FORM;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.FORMACTION;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.FORMENCTYPE;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.FORMMETHOD;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.FORMNOVALIDATE;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.FORMTARGET;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.HEIGHT;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.LIST;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.MAX;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.MIN;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.MULTIPLE;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.PATTERN;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.REQUIRED;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.STEP;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.WIDTH;
+
 import java.util.List;
 
 import com.github.gwtbootstrap.client.ui.constants.AlternateSize;
 import com.github.gwtbootstrap.client.ui.constants.Constants;
 import com.github.gwtbootstrap.client.ui.constants.ControlGroupType;
 import com.github.gwtbootstrap.client.ui.constants.Device;
+import com.github.gwtbootstrap.client.ui.constants.InputType;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.editor.client.EditorError;
@@ -238,4 +257,154 @@ public class ValueBoxBase<T> extends com.google.gwt.user.client.ui.ValueBoxBase<
 		StyleHelper.removeStyle(this, style);
 		
 	}
+	
+	/**
+	 * Set any of the new Hmtl5 input types.
+	 * 
+	 * @param inputType
+	 */
+	public void setType(InputType inputType) {
+		if(inputType != null) {
+			AttributeHelper.setAttribute(getElement(), InputType.ATTRIBUTE_NAME, inputType.getValue());
+		}
+	}
+	
+	// -- Html5 input attributes -- 
+	
+	public void setAutocomplete(boolean autocomplete) {
+		AttributeHelper.setAttribute(getElement(), AUTOCOMPLETE.getValue(), autocomplete);
+	}
+
+	public void setAutofocus(boolean autofocus) {
+		AttributeHelper.setAttribute(getElement(), AUTOFOCUS.getValue(), autofocus);
+	}
+
+	public void setForm(String form) {
+		AttributeHelper.setAttribute(getElement(), FORM.getValue(), form);
+	}
+
+	public void setFormaction(String formaction) {
+		AttributeHelper.setAttribute(getElement(), FORMACTION.getValue(), formaction);
+	}
+
+	public void setFormenctype(String formenctype) {
+		AttributeHelper.setAttribute(getElement(), FORMENCTYPE.getValue(), formenctype);
+	}
+
+	public void setFormmethod(String formmethod) {
+		AttributeHelper.setAttribute(getElement(), FORMMETHOD.getValue(), formmethod);
+	}
+
+	public void setFormnovalidate(boolean formnovalidate) {
+		AttributeHelper.setAttribute(getElement(), FORMNOVALIDATE.getValue(), formnovalidate);
+	}
+
+	public void setFormtarget(String formtarget) {
+		AttributeHelper.setAttribute(getElement(), FORMTARGET.getValue(), formtarget);
+	}
+
+	public void setHeight(Integer height) {
+		AttributeHelper.setAttribute(getElement(), HEIGHT.getValue(), height);
+	}
+
+	public void setWidth(Integer width) {
+		AttributeHelper.setAttribute(getElement(), WIDTH.getValue(), width);
+	}
+
+	public void setList(String list) {
+		AttributeHelper.setAttribute(getElement(), LIST.getValue(), list);
+	}
+
+	public void setMin(Integer min) {
+		AttributeHelper.setAttribute(getElement(), MIN.getValue(), min);
+	}
+
+	public void setMax(Integer max) {
+		AttributeHelper.setAttribute(getElement(), MAX.getValue(), max);
+	}
+
+	public void setMultiple(boolean multiple) {
+		AttributeHelper.setAttribute(getElement(), MULTIPLE.getValue(), multiple);
+	}
+
+	public void setPattern(String pattern) {
+		AttributeHelper.setAttribute(getElement(), PATTERN.getValue(), pattern);
+	}
+
+	public void setRequired(boolean required) {
+		AttributeHelper.setAttribute(getElement(), REQUIRED.getValue(), required);
+	}
+
+	public void setStep(Integer step) {
+		AttributeHelper.setAttribute(getElement(), STEP.getValue(), step);
+	}
+
+	public boolean isAutocomplete() {
+		return AttributeHelper.getAttributeAsBoolean(getElement(), AUTOCOMPLETE.getValue());
+	}
+
+	public boolean isAutofocus() {
+		return AttributeHelper.getAttributeAsBoolean(getElement(), AUTOFOCUS.getValue());
+	}
+
+	public String getForm() {
+		return AttributeHelper.getAttribute(getElement(), FORM.getValue());
+	}
+
+	public String getFormaction() {
+		return AttributeHelper.getAttribute(getElement(), FORMACTION.getValue());
+	}
+
+	public String getFormenctype() {
+		return AttributeHelper.getAttribute(getElement(), FORMENCTYPE.getValue());
+	}
+
+	public String getFormmethod() {
+		return AttributeHelper.getAttribute(getElement(), FORMMETHOD.getValue());
+	}
+
+	public boolean isFormnovalidate() {
+		return AttributeHelper.getAttributeAsBoolean(getElement(), FORMNOVALIDATE.getValue());
+	}
+
+	public String getFormtarget() {
+		return AttributeHelper.getAttribute(getElement(), FORMTARGET.getValue());
+	}
+
+	public Integer getHeight() {
+		return AttributeHelper.getAttributeAsInteger(getElement(), HEIGHT.getValue());
+	}
+
+	public Integer getWidth() {
+		return AttributeHelper.getAttributeAsInteger(getElement(), WIDTH.getValue());
+	}
+
+	public String getList() {
+		return AttributeHelper.getAttribute(getElement(), AUTOFOCUS.getValue());
+	}
+
+	public Integer getMin() {
+		return AttributeHelper.getAttributeAsInteger(getElement(), MIN.getValue());
+	}
+
+	public Integer getMax() {
+		return AttributeHelper.getAttributeAsInteger(getElement(), MAX.getValue());
+	}
+
+	public boolean isMultiple() {
+		return AttributeHelper.getAttributeAsBoolean(getElement(), MULTIPLE.getValue());
+	}
+
+	public String getPattern() {
+		return AttributeHelper.getAttribute(getElement(), PATTERN.getValue());
+	}
+
+	public boolean isRequired() {
+		return AttributeHelper.getAttributeAsBoolean(getElement(), REQUIRED.getValue());
+	}
+
+	public Integer getStep() {
+		return AttributeHelper.getAttributeAsInteger(getElement(), STEP.getValue());
+	}
+	
 }

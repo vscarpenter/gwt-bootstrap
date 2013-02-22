@@ -34,4 +34,5 @@
 	<entry-point class='com.github.gwtbootstrap.showcase.client.Showcase' />
 	<source path='client' />
     
+    <collapse-all-properties />
 </module>

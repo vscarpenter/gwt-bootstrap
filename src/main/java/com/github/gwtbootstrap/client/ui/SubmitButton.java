@@ -15,6 +15,25 @@
  */
 package com.github.gwtbootstrap.client.ui;
 
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.AUTOCOMPLETE;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.AUTOFOCUS;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.FORM;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.FORMACTION;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.FORMENCTYPE;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.FORMMETHOD;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.FORMNOVALIDATE;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.FORMTARGET;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.HEIGHT;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.LIST;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.MAX;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.MIN;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.MULTIPLE;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.PATTERN;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.REQUIRED;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.STEP;
+import static com.github.gwtbootstrap.client.ui.constants.InputAttributeType.WIDTH;
+
+import com.github.gwtbootstrap.client.ui.base.AttributeHelper;
 import com.github.gwtbootstrap.client.ui.base.HasType;
 import com.github.gwtbootstrap.client.ui.base.StyleHelper;
 import com.github.gwtbootstrap.client.ui.constants.ButtonType;
@@ -237,4 +256,63 @@ public class SubmitButton extends FocusWidget implements HasType<ButtonType>, Ha
     public void setBlock(boolean block) {
         setStyleName(Constants.BTN_BLOCK, block);
     }
+    
+	// -- Html5 input attributes -- 
+	
+	public void setAutofocus(boolean autofocus) {
+		AttributeHelper.setAttribute(getElement(), AUTOFOCUS.getValue(), autofocus);
+	}
+
+	public void setForm(String form) {
+		AttributeHelper.setAttribute(getElement(), FORM.getValue(), form);
+	}
+
+	public void setFormaction(String formaction) {
+		AttributeHelper.setAttribute(getElement(), FORMACTION.getValue(), formaction);
+	}
+
+	public void setFormenctype(String formenctype) {
+		AttributeHelper.setAttribute(getElement(), FORMENCTYPE.getValue(), formenctype);
+	}
+
+	public void setFormmethod(String formmethod) {
+		AttributeHelper.setAttribute(getElement(), FORMMETHOD.getValue(), formmethod);
+	}
+
+	public void setFormnovalidate(boolean formnovalidate) {
+		AttributeHelper.setAttribute(getElement(), FORMNOVALIDATE.getValue(), formnovalidate);
+	}
+
+	public void setFormtarget(String formtarget) {
+		AttributeHelper.setAttribute(getElement(), FORMTARGET.getValue(), formtarget);
+	}
+
+	public boolean isAutofocus() {
+		return AttributeHelper.getAttributeAsBoolean(getElement(), AUTOFOCUS.getValue());
+	}
+
+	public String getForm() {
+		return AttributeHelper.getAttribute(getElement(), FORM.getValue());
+	}
+
+	public String getFormaction() {
+		return AttributeHelper.getAttribute(getElement(), FORMACTION.getValue());
+	}
+
+	public String getFormenctype() {
+		return AttributeHelper.getAttribute(getElement(), FORMENCTYPE.getValue());
+	}
+
+	public String getFormmethod() {
+		return AttributeHelper.getAttribute(getElement(), FORMMETHOD.getValue());
+	}
+
+	public boolean isFormnovalidate() {
+		return AttributeHelper.getAttributeAsBoolean(getElement(), FORMNOVALIDATE.getValue());
+	}
+
+	public String getFormtarget() {
+		return AttributeHelper.getAttribute(getElement(), FORMTARGET.getValue());
+	}
+    
 }
